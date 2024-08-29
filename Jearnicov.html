@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEARNIKOV - Restaurante Vegetariano</title>
+    <style>
+        /* Importar tipografía estilo retro */
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        /* Estilos Generales */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Press Start 2P', sans-serif; /* Tipografía estilo Zelda */
+            background-color: #e0e0e0; /* Fondo más neutro que combina con todo */
+        }
+
+        /* Barra lateral de navegación */
+        .sidebar {
+            width: 250px;
+            background-color: #1d4f4e; /* Color verde */
+            position: fixed;
+            height: 100%;
+            padding: 20px;
+            color: #d4af37; /* Letras doradas */
+            text-align: center; /* Centrar contenido */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centrar horizontalmente */
+            justify-content: center; /* Centrar verticalmente */
+        }
+
+        .sidebar svg {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #d4af37; /* Letras doradas */
+        }
+
+        .sidebar a {
+            color: #d4af37; /* Letras doradas */
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 10px 0;
+            text-transform: uppercase;
+            margin: 5px 0;
+        }
+
+        .sidebar a:hover {
+            color: #ffffff; /* Color blanco para el hover */
+        }
+
+        /* Contenido Principal */
+        .main-content {
+            margin-left: 250px; /* Espacio reservado para la barra lateral */
+            padding: 20px;
+        }
+
+        /* Sección de Platos Estilo Undertale */
+        .dish-section {
+            display: flex;
+            flex-direction: column; /* Organización vertical */
+            align-items: center;
+            gap: 30px;
+        }
+
+        .dish-card {
+            position: relative;
+            width: 100%; /* Usar todo el ancho disponible */
+            max-width: 800px;
+            color: white;
+            text-align: left;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            align-items: center; /* Alineación de la imagen y el texto */
+            background-color: #000000; /* Fondo negro */
+            padding: 15px;
+            justify-content: space-between; /* Distribución de espacio entre imagen y texto */
+        }
+
+        .dish-card:nth-child(odd) {
+            flex-direction: row-reverse; /* Alterna la posición de la imagen */
+        }
+
+        .dish-card img {
+            width: 200px; /* Tamaño de la imagen */
+            height: auto;
+            margin: 0 20px; /* Espacio alrededor de la imagen */
+        }
+
+        /* Globos de Texto Estilo Undertale */
+        .speech-bubble {
+            background-color: #000000; /* Fondo negro para el globo */
+            color: #ffffff; /* Texto blanco */
+            padding: 10px;
+            border: 2px solid #ffffff; /* Borde blanco */
+            font-size: 12px;
+            border-radius: 5px;
+            max-width: 100%;
+            width: calc(100% - 250px); /* Ajustar al tamaño de la barra lateral */
+        }
+
+        .dish-card .origin,
+        .dish-card .reason {
+            margin-bottom: 10px; /* Espacio entre globos de texto */
+        }
+
+        /* Menú */
+        .menu-section {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .menu-item {
+            max-width: 800px;
+            margin: 20px 0;
+            color: white;
+            background-color: #000000; /* Fondo negro */
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Firma */
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 16px;
+            color: #1d4f4e; /* Color verde */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Barra lateral -->
+    <div class="sidebar">
+        <!-- Logo Ajustado con SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#ffffff">
+            <!-- Triángulo grande dorado -->
+            <polygon points="50,5 95,95 5,95" fill="#d4af37" stroke="#1d4f4e" stroke-width="2" />
+            <!-- Triángulo interior negro invertido -->
+            <polygon points="50,70 20,90 80,90" fill="#000000" />
+            <!-- Letra J en el centro -->
+            <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="30" fill="#ffffff" text-anchor="middle" dy=".3em">J</text>
+        </svg>
+        <h1>JEARNIKOV</h1>
+        <a href="#inicio">Inicio</a>
+        <a href="#menu">Menú</a>
+        <a href="#contacto">Contacto</a>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <!-- Sección de Inicio -->
+        <div id="inicio" class="dish-section">
+            <div class="dish-card">
+                <img src="https://badun.nestle.es/imgserver/v1/80/1290x742/709dc898c68a-crema-de-champinones-ideal.jpg" alt="Crema de Champiñones">
+                <div>
+                    <div class="speech-bubble origin">Origen: Francia. Suave y cremosa sopa que calienta el alma.</div>
+                    <div class="speech-bubble reason">Razón de elección: Un clásico reconfortante que gusta a todos.</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="https://i.blogs.es/2d572b/caprese/1366_2000.jpg" alt="Ensalada Caprese">
+                <div>
+                    <div class="speech-bubble origin">Origen: Italia. Fresca combinación de tomate, mozzarella y albahaca.</div>
+                    <div class="speech-bubble reason">Razón de elección: Ligera y refrescante, ideal para cualquier comida.</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="https://recetasdecocina.elmundo.es/wp-content/uploads/2023/05/lasana-de-espinacas.jpg" alt="Lasaña de Queso y Espinaca">
+                <div>
+                    <div class="speech-bubble origin">Origen: Italia. Capas de pasta con queso y espinacas.</div>
+                    <div class="speech-bubble reason">Razón de elección: Satisfactoria y nutritiva, perfecta para los amantes del queso.</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="https://imag.bonviveur.com/ratatouille-recien-horneada.jpg" alt="Ratatouille">
+                <div>
+                    <div class="speech-bubble origin">Origen: Francia. Verduras asadas en una mezcla deliciosa.</div>
+                    <div class="speech-bubble reason">Razón de elección: Un plato colorido y lleno de sabor que destaca por su combinación de verduras.</div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="https://images.aws.nestle.recipes/resized/dfd5d9217998c719229fb6e3efb93a79_pastel_de_zanahoria_sin_horno_150_1080_850.jpg" alt="Pastel de Zanahoria">
+                <div>
+                    <div class="speech-bubble origin">Origen: Europa. Un dulce esponjoso lleno de zanahorias.</div>
+                    <div class="speech-bubble reason">Razón de elección: Saludable y delicioso, ideal para terminar la comida.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Menú -->
+        <div id="menu" class="menu-section">
+            <div class="menu-item">
+                <h2>Crema de Champiñones</h2>
+                <!-- Espacio para imagen -->
+            </div>
+            <div class="menu-item">
+                <h2>Ensalada Caprese</h2>
+                <!-- Espacio para imagen -->
+            </div>
+            <div class="menu-item">
+                <h2>Lasaña de
+
+
+
+
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
